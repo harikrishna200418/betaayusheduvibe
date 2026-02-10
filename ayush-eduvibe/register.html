@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join - AYUSH EDUVIBE</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+
+    <!-- Top Header -->
+    <div class="top-header">
+        <div class="container container-flex" style="justify-content: flex-end; gap: 20px;">
+            <a href="tel:6300810337">📞 6300810337</a>
+            <span>|</span>
+            <a href="https://wa.me/6300810337" target="_blank">Contact us on <span
+                    style="font-size: 1.2rem; margin-left: 5px;">💬</span></a>
+            <a href="mailto:info@aevibe.in">✉️ info@aevibe.in</a>
+        </div>
+    </div>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo"><img src="assets/final_logo_transparent.png" alt="Ayush Eduvibe" class="nav-logo"> AYUSH
+                <span>EDUVIBE</span>
+            </div>
+            <a href="index.html" class="nav-link">← Back to Home</a>
+        </div>
+    </nav>
+
+    <section class="hero" style="min-height: 100vh; display: flex; align-items: center; padding-top: 100px;">
+        <div class="container" style="max-width: 600px;">
+
+            <div class="text-center mb-2">
+                <h1>Student Registration</h1>
+                <p>Sign up in 3 simple steps</p>
+            </div>
+
+            <!-- Wizard Visual -->
+            <div class="wizard-steps">
+                <div class="step active">
+                    <div class="step-circle">1</div>
+                    <small>Basics</small>
+                </div>
+                <div class="step">
+                    <div class="step-circle">2</div>
+                    <small>Interests</small>
+                </div>
+                <div class="step">
+                    <div class="step-circle">3</div>
+                    <small>Finish</small>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <div id="wizard-form" class="card">
+
+                <!-- Step 1 -->
+                <div class="step-content" id="step1">
+                    <h3 class="mb-2">Who are you?</h3>
+
+                    <div class="form-group">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" id="reg-name" class="form-input" placeholder="e.g. Rahul Kumar">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Phone Number</label>
+                        <input type="tel" id="reg-phone" class="form-input" placeholder="e.g. 9876543210">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Email Address <span style="color:var(--accent)">*</span></label>
+                        <input type="email" id="reg-email" class="form-input" placeholder="name@example.com">
+                        <small style="color:red; display:none;" id="email-error">Please enter a valid email</small>
+                    </div>
+
+                    <button class="btn btn-primary btn-full" data-next>Next Step →</button>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step-content" id="step2" style="display:none;">
+                    <h3 class="mb-2">What are you looking for?</h3>
+
+                    <div class="form-group">
+                        <label class="form-label">I am interested in:</label>
+                        <select class="form-select" id="reg-interest">
+                            <option>Study Abroad</option>
+                            <option>Exam Preparation</option>
+                            <option>Internships / Jobs</option>
+                            <option>Skill Training</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label"
+                            style="color: var(--primary); font-size: 1.1rem; font-weight: bold;">Highest
+                            Qualification</label>
+                        <select class="form-select" id="reg-qualification" style="border: 1px solid var(--primary);">
+                            <option value="">Select Qualification</option>
+                            <option value="10th Grade">10th Grade</option>
+                            <option value="12th Grade">Intermediate (12th)</option>
+                            <option value="B.Tech">B.Tech / BE</option>
+                            <option value="B.Sc">Bachelor of Science (B.Sc)</option>
+                            <option value="B.Com">Bachelor of Commerce (B.Com)</option>
+                            <option value="B.A">Bachelor of Arts (B.A)</option>
+                            <option value="BCA">Bachelor of Computer Applications (BCA)</option>
+                            <option value="BBA">BBA / BMS</option>
+                            <option value="Medical">Medical (MBBS/BDS/Pharmacy)</option>
+                            <option value="Law">Law (LLB)</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <!-- Dynamic Specialization Container -->
+                    <div id="specialization-container"
+                        style="display:none; margin-bottom: 1.5rem; background: #eff6ff; padding: 1rem; border-radius: 8px; border: 1px solid #dbeafe;">
+                        <label class="form-label" style="color: var(--primary);">Select Specialization / Branch</label>
+                        <select class="form-select" id="reg-specialization">
+                            <!-- Options injected by script -->
+                        </select>
+                    </div>
+
+                    <div class="flex-between">
+                        <button class="btn btn-secondary" data-prev>← Back</button>
+                        <button class="btn btn-primary" data-next>Next Step →</button>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step-content" id="step3" style="display:none;">
+                    <h3 class="mb-2">Almost Done!</h3>
+
+                    <div class="form-group">
+                        <label class="form-label">Create a Password</label>
+                        <input type="password" id="reg-password" class="form-input" placeholder="Minimum 8 characters">
+                        <div style="margin-top:5px; font-size:0.8rem; color:#bbb;">
+                            Strength: <span id="pass-strength">Weak</span>
+                        </div>
+                    </div>
+
+                    <div class="text-center" style="margin-top: 2rem;">
+                        <button class="btn btn-primary btn-full" data-next>Create Account</button>
+                    </div>
+
+                    <div class="flex-center mt-2">
+                        <button class="btn btn-secondary" style="border:none; background:none;" data-prev>←
+                            Back</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Script included at the end to ensure DOM is ready -->
+    <!-- Scripts -->
+    <script src="branch_data.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

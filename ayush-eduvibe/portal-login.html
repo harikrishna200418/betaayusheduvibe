@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login - AYUSH EDUVIBE</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="portal.css"> <!-- Reusing enhanced styles -->
+    <style>
+        .portal-auth-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: #f3f4f6;
+        }
+
+        .auth-card {
+            width: 100%;
+            max-width: 480px;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+
+        .auth-tabs {
+            display: flex;
+            margin-bottom: 2rem;
+            background: #f3f4f6;
+            padding: 5px;
+            border-radius: 12px;
+        }
+
+        .auth-tab {
+            flex: 1;
+            padding: 12px;
+            text-align: center;
+            cursor: pointer;
+            color: #6b7280;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .auth-tab.active {
+            background: #ffffff;
+            color: var(--primary);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Help Text */
+        .help-text {
+            font-size: 0.9rem;
+            color: #6b7280;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        /* Input Icon Wrapper */
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #9ca3af;
+            font-size: 1.2rem;
+        }
+
+        .form-input-icon {
+            padding-left: 45px !important;
+            /* Space for icon */
+        }
+
+        .otp-boxes {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin: 1rem 0;
+        }
+
+        .otp-box {
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            text-align: center;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background: #ffffff;
+            color: #111827;
+        }
+
+        .otp-box:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- Top Header -->
+    <div class="top-header">
+        <div class="container container-flex" style="justify-content: flex-end; gap: 20px;">
+            <a href="tel:6300810337">📞 6300810337</a>
+            <span>|</span>
+            <a href="https://wa.me/6300810337" target="_blank">Contact us on <span
+                    style="font-size: 1.2rem; margin-left: 5px;">💬</span></a>
+            <a href="mailto:info@aevibe.in">✉️ info@aevibe.in</a>
+        </div>
+    </div>
+    <nav class="navbar"
+        style="position: sticky; top: 40px; background: transparent; backdrop-filter: none; border:none;">
+        <div class="container nav-container">
+            <div class="logo"><img src="assets/final_logo_transparent.png" alt="Ayush Eduvibe" class="nav-logo"> AYUSH
+                <span>EDUVIBE</span>
+            </div>
+            <a href="index.html" class="btn btn-secondary" style="padding: 8px 16px;">&larr; Home</a>
+        </div>
+    </nav>
+
+    <div class="portal-auth-container">
+        <div class="auth-card">
+            <div class="text-center mb-2">
+                <h2 style="margin-bottom:0.5rem; font-size: 2rem;">Student Login 🎓</h2>
+                <p style="color: #6b7280;">Access your free study material and applications.</p>
+            </div>
+
+            <div class="auth-tabs">
+                <div class="auth-tab active" onclick="switchTab('login')">Login</div>
+                <div class="auth-tab" onclick="switchTab('register')">New User? Register</div>
+            </div>
+
+            <!-- Login Form -->
+            <form id="loginForm">
+                <div class="form-group">
+                    <label class="form-label">Your Email</label>
+                    <div class="input-wrapper">
+                        <span class="input-icon">✉️</span>
+                        <input type="email" class="form-input form-input-icon" id="loginEmail" required
+                            placeholder="example@gmail.com">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <div class="input-wrapper">
+                        <span class="input-icon">🔒</span>
+                        <input type="password" class="form-input form-input-icon" id="loginPassword" required
+                            placeholder="******">
+                    </div>
+                    <div style="text-align:right; margin-top:5px;">
+                        <a href="#" style="color:var(--primary); font-size:0.9rem;"
+                            onclick="alert('Please contact support at +91-9876543210 to reset password.')">Forgot
+                            Password?</a>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full btn-lg">Login to Portal</button>
+            </form>
+
+            <!-- Register Form -->
+            <form id="registerForm" style="display: none;">
+                <!-- Step 1: Email -->
+                <div class="step-1" id="regStep1">
+                    <div class="form-group">
+                        <label class="form-label">Enter Your Email Address</label>
+                        <small class="help-text">We will send a secret code (OTP) to this email.</small>
+                        <div class="input-wrapper">
+                            <span class="input-icon">📧</span>
+                            <input type="email" class="form-input form-input-icon" id="regEmail" required
+                                placeholder="tina@gmail.com">
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-full btn-lg" onclick="sendOTP()">Get Code
+                        (OTP)</button>
+                </div>
+
+                <!-- Step 2: OTP -->
+                <div class="otp-section" id="otpSection">
+                    <div class="text-center">
+                        <p style="color:#374151;">We sent a code to your email.</p>
+                        <p style="color:var(--primary); font-weight:bold;">For Demo Use: 1234</p>
+                    </div>
+                    <div class="otp-boxes">
+                        <!-- Simulate 4 digit boxes for ease, actually just 1 input visual style often easier for logic but lets try separated or simple -->
+                        <input type="text" class="form-input text-center" id="otpInput" placeholder="Enter 4-digit Code"
+                            maxlength="4" style="letter-spacing: 5px; font-size: 1.5rem; font-weight:bold;">
+                    </div>
+                    <button type="button" class="btn btn-secondary btn-full mb-2" onclick="verifyOTP()">Verify
+                        Code</button>
+                    <div class="text-center">
+                        <button type="button"
+                            style="background:none; border:none; color:var(--text-muted); text-decoration:underline; cursor:pointer;"
+                            onclick="resendOTP()">Resend Code</button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Password -->
+                <div class="otp-section" id="passwordSection">
+                    <div class="form-group">
+                        <label class="form-label">Create a Password</label>
+                        <small class="help-text">Choose something you will remember.</small>
+                        <div class="input-wrapper">
+                            <span class="input-icon">🔑</span>
+                            <input type="password" class="form-input form-input-icon" id="regPassword"
+                                placeholder="New Password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Confirm Password</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">✔️</span>
+                            <input type="password" class="form-input form-input-icon" id="regConfirmPassword"
+                                placeholder="Type same password again">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full btn-lg">Create Account</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <script>
+        // Slightly enhanced JS for better feedback
+        function switchTab(tab) {
+            document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('active'));
+            if (tab === 'login') {
+                document.querySelectorAll('.auth-tab')[0].classList.add('active');
+                document.getElementById('loginForm').style.display = 'block';
+                document.getElementById('registerForm').style.display = 'none';
+            } else {
+                document.querySelectorAll('.auth-tab')[1].classList.add('active');
+                document.getElementById('loginForm').style.display = 'none';
+                document.getElementById('registerForm').style.display = 'block';
+            }
+        }
+
+        function sendOTP() {
+            const email = document.getElementById('regEmail').value;
+            if (!email || !email.includes('@')) return alert('Please enter a valid email address (e.g. name@gmail.com)');
+
+            const btn = event.target;
+            btn.innerText = "Sending...";
+            btn.disabled = true;
+
+            setTimeout(() => {
+                alert(`Code sent to ${email}.\n\n(Secret Code is: 1234)`);
+                document.getElementById('regStep1').style.display = 'none';
+                document.getElementById('otpSection').style.display = 'block';
+            }, 1000);
+        }
+
+        function verifyOTP() {
+            const otp = document.getElementById('otpInput').value;
+            if (otp === '1234') {
+                alert('Success! Code Verified.');
+                document.getElementById('otpSection').style.display = 'none';
+                document.getElementById('passwordSection').style.display = 'block';
+            } else {
+                alert('Wrong Code. Please try again (Hint: 1234).');
+            }
+        }
+
+        function resendOTP() {
+            alert('Code resent successfully! (Use 1234)');
+        }
+
+        document.getElementById('registerForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const pwd = document.getElementById('regPassword').value;
+            const confirm = document.getElementById('regConfirmPassword').value;
+            const email = document.getElementById('regEmail').value;
+
+            if (!pwd) return alert('Please enter a password');
+            if (pwd !== confirm) return alert('Passwords do not match. Please type carefully.');
+
+            localStorage.setItem('portal_user', JSON.stringify({ email, password: pwd }));
+
+            // Nice success user flow
+            alert('Registration Successful! \n\nYou can now login with your email and password.');
+            location.reload();
+        });
+
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const pwd = document.getElementById('loginPassword').value;
+            const storedUser = JSON.parse(localStorage.getItem('portal_user'));
+
+            // Demo fallback
+            if (email === 'demo@test.com' && pwd === 'demo') {
+                localStorage.setItem('portal_session', email);
+                localStorage.setItem('isLoggedIn', 'true'); // For script.js compatibility
+                window.location.href = 'portal-dashboard.html';
+                return;
+            }
+
+            if (storedUser && storedUser.email.toLowerCase() === email.toLowerCase() && storedUser.password === pwd) {
+                localStorage.setItem('portal_session', email);
+                localStorage.setItem('isLoggedIn', 'true'); // For script.js compatibility
+                window.location.href = 'portal-dashboard.html';
+            } else {
+                alert('Incorrect Email or Password.\n\n If you are new, please Register first.');
+            }
+        });
+    </script>
+</body>
+
+</html>

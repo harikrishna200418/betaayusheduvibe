@@ -1,0 +1,76 @@
+<div class="form-group">
+    <label class="form-label">Email Address <span style="color:var(--accent)">*</span></label>
+    <input type="email" id="reg-email" class="form-input" placeholder="name@example.com">
+    <small style="color:red; display:none;" id="email-error">Please enter a valid email</small>
+</div>
+
+<button class="btn btn-primary btn-full" data-next>Next Step →</button>
+</div>
+
+<!-- Step 2 -->
+<div class="step-content" id="step2" style="display:none;">
+    <h3 class="mb-2">What are you looking for?</h3>
+
+    <div class="form-group">
+        <label class="form-label">I am interested in:</label>
+        <select class="form-select" id="reg-interest">
+            <option>Study Abroad</option>
+            <option>Exam Preparation</option>
+            <option>Internships / Jobs</option>
+            <option>Skill Training</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label class="form-label">Highest Qualification</label>
+        <select class="form-select" id="reg-qualification">
+            <option value="">Select Qualification</option>
+            <option value="10th Grade">10th Grade</option>
+            <option value="12th Grade">Intermediate (12th)</option>
+            <option value="B.Tech">B.Tech / BE</option>
+            <option value="B.Sc">Bachelor of Science (B.Sc)</option>
+            <option value="B.Com">Bachelor of Commerce (B.Com)</option>
+            <option value="B.A">Bachelor of Arts (B.A)</option>
+            <option value="BCA">Bachelor of Computer Applications (BCA)</option>
+            <option value="BBA">BBA / BMS</option>
+            <option value="Medical">Medical (MBBS/BDS/Pharmacy)</option>
+            <option value="Law">Law (LLB)</option>
+            <option value="Other">Other</option>
+        </select>
+    </div>
+
+    <!-- Dynamic Specialization Container -->
+    <div id="specialization-container"
+        style="display:none; margin-bottom: 1.5rem; background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 8px;">
+        <label class="form-label" style="color: var(--primary);">Select Specialization / Branch</label>
+        <select class="form-select" id="reg-specialization">
+            <!-- Options injected by script -->
+        </select>
+    </div>
+
+    <div class="flex-between">
+        <button class="btn btn-secondary" data-prev>← Back</button>
+        <button class="btn btn-primary" data-next>Next Step →</button>
+    </div>
+</div>
+
+<!-- Step 3 -->
+<div class="step-content" id="step3" style="display:none;">
+    <h3 class="mb-2">Secure Your Account</h3>
+
+    <div class="form-group">
+        <label class="form-label">Create a Strong Password</label>
+        <input type="password" id="reg-password" class="form-input" placeholder="Minimum 8 characters">
+        <div style="margin-top:5px; font-size:0.8rem; color:#bbb;">
+            Strength: <span id="pass-strength">Weak</span>
+        </div>
+    </div>
+
+    <div class="text-center" style="margin-top: 2rem;">
+        <button class="btn btn-primary btn-full" data-next>Create Account</button>
+    </div>
+
+    <div class="flex-center mt-2">
+        <button class="btn btn-secondary" style="border:none; background:none;" data-prev>←
+            Back</button>
+    </div>

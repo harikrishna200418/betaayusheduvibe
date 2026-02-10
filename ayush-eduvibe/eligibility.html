@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Eligibility - AYUSH EDUVIBE</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Specific Styles for Eligibility Wizard */
+        .eligibility-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 100px 20px 40px;
+            background: #f8f9fa;
+        }
+
+        .wizard-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 700px;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .wizard-header {
+            margin-bottom: 2rem;
+        }
+
+        .wizard-header h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .wizard-progress {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 3rem;
+            position: relative;
+            max-width: 300px;
+            margin: 0 auto 3rem;
+        }
+
+        .wizard-progress::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #e5e7eb;
+            z-index: 0;
+            transform: translateY(-50%);
+            border-radius: 4px;
+        }
+
+        .progress-bar-fill {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            height: 4px;
+            background: var(--primary);
+            z-index: 0;
+            transform: translateY(-50%);
+            border-radius: 4px;
+            transition: width 0.3s ease;
+            width: 0%;
+        }
+
+        .wizard-step-dot {
+            width: 12px;
+            height: 12px;
+            background: #e5e7eb;
+            border-radius: 50%;
+            position: relative;
+            z-index: 1;
+            transition: 0.3s;
+            border: 4px solid #ffffff;
+            box-shadow: 0 0 0 2px #e5e7eb;
+        }
+
+        .wizard-step-dot.active {
+            background: var(--primary);
+            box-shadow: 0 0 0 2px var(--primary);
+        }
+
+        .step-content {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .step-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Option Cards */
+        .options-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .option-card {
+            padding: 20px;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: left;
+            font-weight: 500;
+            color: #374151;
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .option-card:hover {
+            border-color: var(--primary);
+            background: #eff6ff;
+            color: var(--primary);
+        }
+
+        .option-card.selected {
+            border-color: var(--primary);
+            background: var(--primary);
+            color: #ffffff;
+        }
+
+        .btn-wrapper {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Success State */
+        .success-animation {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes popIn {
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* NEW STYLES FOR IMAGE CARDS */
+        .country-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 500px) {
+            .country-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .option-card {
+            /* Existing styles adjusted for flex column */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Specific styles for simple text options (Step 2) */
+        .simple-option {
+            flex-direction: row !important;
+            align-items: center;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar (Simplified) -->
+    <!-- Top Header -->
+    <div class="top-header">
+        <div class="container container-flex" style="justify-content: flex-end; gap: 20px;">
+            <a href="tel:6300810337">📞 6300810337</a>
+            <span>|</span>
+            <a href="https://wa.me/6300810337" target="_blank">Contact us on <span
+                    style="font-size: 1.2rem; margin-left: 5px;">💬</span></a>
+            <a href="mailto:info@aevibe.in">✉️ info@aevibe.in</a>
+        </div>
+    </div>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo"><img src="assets/final_logo_transparent.png" alt="Ayush Eduvibe" class="nav-logo"> AYUSH
+                <span>EDUVIBE</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="study-abroad.html" class="nav-link">Study Abroad</a>
+                <a href="eligibility.html" class="nav-link active" style="color:var(--primary);">Check Eligibility</a>
+                <a href="exams.html" class="nav-link">Exams</a>
+                <a href="jobs.html" class="nav-link">Jobs</a>
+                <a href="services.html" class="nav-link">Services</a>
+            </div>
+            <button class="mobile-menu-btn" style="display:none;font-size:1.5rem;">☰</button>
+        </div>
+    </nav>
+
+    <div class="eligibility-container">
+
+        <div class="text-center mb-2">
+            <h1>Check Your Eligibility</h1>
+            <p>Complete these 3 steps to see your best options.</p>
+        </div>
+
+        <div class="wizard-card">
+
+            <!-- Progress -->
+            <div class="wizard-progress">
+                <div class="progress-bar-fill" id="progressBar"></div>
+                <div class="wizard-step-dot active" id="dot1"></div>
+                <div class="wizard-step-dot" id="dot2"></div>
+                <div class="wizard-step-dot" id="dot3"></div>
+            </div>
+
+            <form id="eligibilityForm" onsubmit="return false;">
+
+                <!-- STEP 1: Country -->
+                <div class="step-content active" id="step1">
+                    <h3 class="mb-2">Step 1: Where do you want to study?</h3>
+                    <div class="country-grid">
+
+                        <!-- USA -->
+                        <div class="option-card" onclick="selectOption(this, 1)" data-value="USA">
+                            <h4 style="margin:0; font-size:1rem;">USA</h4>
+                        </div>
+
+                        <!-- UK -->
+                        <div class="option-card" onclick="selectOption(this, 1)" data-value="United Kingdom">
+                            <h4 style="margin:0; font-size:1rem;">UK</h4>
+                        </div>
+
+                        <!-- Canada -->
+                        <div class="option-card" onclick="selectOption(this, 1)" data-value="Canada">
+                            <h4 style="margin:0; font-size:1rem;">Canada</h4>
+                        </div>
+
+                        <!-- Australia -->
+                        <div class="option-card" onclick="selectOption(this, 1)" data-value="Australia">
+                            <h4 style="margin:0; font-size:1rem;">Australia</h4>
+                        </div>
+
+                        <!-- Germany -->
+                        <div class="option-card" onclick="selectOption(this, 1)" data-value="Germany">
+                            <h4 style="margin:0; font-size:1rem;">Germany</h4>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- STEP 2: Education -->
+                <div class="step-content" id="step2">
+                    <h3 class="mb-2">Step 2: Current Education Level</h3>
+                    <div class="options-grid">
+                        <div class="option-card simple-option" onclick="selectOption(this, 2)"
+                            data-value="Undergraduate">
+                            <span>Undergraduate (12th Grade)</span>
+                        </div>
+                        <div class="option-card simple-option" onclick="selectOption(this, 2)" data-value="Graduate">
+                            <span>Graduate (Bachelor's)</span>
+                        </div>
+                        <div class="option-card simple-option" onclick="selectOption(this, 2)"
+                            data-value="Postgraduate">
+                            <span>Postgraduate (Master's)</span>
+                        </div>
+                        <div class="option-card simple-option" onclick="selectOption(this, 2)" data-value="PhD">
+                            <span>PhD / Doctorate</span>
+                        </div>
+                        <div class="option-card simple-option" onclick="selectOption(this, 2)" data-value="Diploma">
+                            <span>Diploma / Certificate</span>
+                        </div>
+                    </div>
+                    <div class="btn-wrapper">
+                        <button class="btn btn-secondary" onclick="prevStep(1)">&larr; Back</button>
+                    </div>
+                </div>
+
+                <!-- STEP 3: Details -->
+                <div class="step-content" id="step3">
+                    <h3 class="mb-2">Step 3: Tell us about you</h3>
+
+                    <div class="form-group text-left">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-input" id="eli-name" placeholder="John Doe">
+                    </div>
+
+                    <div class="form-group text-left">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" class="form-input" id="eli-email" placeholder="name@example.com">
+                    </div>
+
+                    <div class="form-group text-left">
+                        <label class="form-label">Phone Number</label>
+                        <div style="display:flex; gap:10px;">
+                            <select class="form-input" id="eli-country-code" style="width:120px; padding-right:5px;">
+                                <option value="+91">+91 (IN)</option>
+                                <option value="+1">+1 (US)</option>
+                                <option value="+44">+44 (UK)</option>
+                                <option value="+61">+61 (AU)</option>
+                                <option value="+49">+49 (DE)</option>
+                            </select>
+                            <input type="tel" class="form-input" id="eli-phone" placeholder="9876543210" maxlength="10"
+                                oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                        </div>
+                    </div>
+
+                    <div class="btn-wrapper">
+                        <button class="btn btn-secondary" onclick="prevStep(2)">&larr; Back</button>
+                        <button class="btn btn-primary" style="width:150px;"
+                            onclick="submitEligibility()">Submit</button>
+                    </div>
+                </div>
+
+                <!-- SUCCESS -->
+                <div class="step-content" id="stepSuccess">
+                    <div class="success-animation">🎉</div>
+                    <h2 style="color:var(--primary);">Eligibility Checked!</h2>
+                    <p>Great news! Based on your profile, you are eligible for <strong>15+ Universities</strong> in
+                        <span id="res-country">your chosen country</span>.
+                    </p>
+                    <p class="text-muted-light">Our expert has been notified and will send you the detailed report at
+                        <strong id="res-email">your email</strong> shortly.
+                    </p>
+                    <p style="color: var(--text-main); font-weight: 500; margin-top: 15px; font-size: 1.1rem;">We will
+                        connect with you within 24 hours.</p>
+
+                    <button class="btn btn-primary btn-lg mt-2" onclick="window.location.href='index.html'">Back to
+                        Home</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <!-- Script Logic -->
+    <!-- Scripts -->
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script>
+        let currentStep = 1;
+        let formData = {
+            country: '',
+            education: '',
+            name: '',
+            email: '',
+            phone: ''
+        };
+
+        function selectOption(element, step) {
+            // Remove selected from siblings
+            const parent = element.parentElement;
+            const siblings = parent.querySelectorAll('.option-card');
+            siblings.forEach(el => el.classList.remove('selected'));
+
+            // Add selected to clicked
+            element.classList.add('selected');
+
+            // Save data found in data-value or fallback to text
+            let value = element.getAttribute('data-value');
+            if (!value) {
+                value = element.innerText.split('\n')[0]; // simple text grab
+            }
+            if (step === 1) formData.country = value;
+            if (step === 2) formData.education = value;
+
+            // Auto advance after short delay
+            setTimeout(() => {
+                nextStep(step + 1);
+            }, 300);
+        }
+
+        function nextStep(step) {
+            // Update UI
+            document.querySelectorAll('.step-content').forEach(el => el.classList.remove('active'));
+            document.getElementById('step' + step).classList.add('active');
+
+            // Update Progress
+            updateProgress(step);
+            currentStep = step;
+        }
+
+        function prevStep(step) {
+            document.querySelectorAll('.step-content').forEach(el => el.classList.remove('active'));
+            document.getElementById('step' + step).classList.add('active');
+            updateProgress(step);
+            currentStep = step;
+        }
+
+        function updateProgress(step) {
+            // Update dots
+            document.querySelectorAll('.wizard-step-dot').forEach((dot, idx) => {
+                if (idx + 1 <= step) dot.classList.add('active');
+                else dot.classList.remove('active');
+            });
+
+            // Update bar
+            const bar = document.getElementById('progressBar');
+            if (step === 1) bar.style.width = '0%';
+            if (step === 2) bar.style.width = '50%';
+            if (step === 3) bar.style.width = '100%';
+        }
+
+        function submitEligibility() {
+            const name = document.getElementById('eli-name').value;
+            const email = document.getElementById('eli-email').value;
+
+            const phone = document.getElementById('eli-phone').value;
+            const code = document.getElementById('eli-country-code').value;
+
+            if (!name || !email) {
+                alert("Please enter your name and email.");
+                return;
+            }
+
+            if (!phone || phone.length !== 10) {
+                alert("Please enter a valid 10-digit mobile number.");
+                return;
+            }
+
+            formData.name = name;
+            formData.email = email;
+
+            // Mock Success
+            document.getElementById('res-country').innerText = formData.country || 'your chosen country';
+            document.getElementById('res-email').innerText = formData.email;
+
+            document.querySelectorAll('.step-content').forEach(el => el.classList.remove('active'));
+            document.getElementById('stepSuccess').classList.add('active');
+
+            // Hide progress dots on success
+            document.querySelector('.wizard-progress').style.opacity = '0';
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Services - AYUSH EDUVIBE</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Top Header -->
+    <div class="top-header">
+        <div class="container container-flex" style="justify-content: flex-end; gap: 20px;">
+            <a href="tel:6300810337">📞 6300810337</a>
+            <span>|</span>
+            <a href="https://wa.me/6300810337" target="_blank">Contact us on <span
+                    style="font-size: 1.2rem; margin-left: 5px;">💬</span></a>
+            <a href="mailto:info@aevibe.in">✉️ info@aevibe.in</a>
+        </div>
+    </div>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo"><img src="assets/final_logo_transparent.png" alt="Ayush Eduvibe" class="nav-logo"> AYUSH
+                <span>EDUVIBE</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="study-abroad.html" class="nav-link">Study Abroad</a>
+                <a href="eligibility.html" class="nav-link" style="color:var(--primary); font-weight:600;">Check
+                    Eligibility</a>
+                <a href="exams.html" class="nav-link">Exams</a>
+                <a href="jobs.html" class="nav-link">Jobs</a>
+                <a href="services.html" class="nav-link active">Services</a>
+            </div>
+            <button class="mobile-menu-btn" style="display:none; color:white; font-size: 24px;">☰</button>
+        </div>
+    </nav>
+
+    <section class="hero" style="padding-bottom: 50px;">
+        <div class="container text-center">
+            <h1>Student Essentials</h1>
+            <p>From loans to accommodation, we've got you covered.</p>
+        </div>
+    </section>
+
+    <!-- Skill Development (Static for now, simpler) -->
+    <section class="section">
+        <div class="container">
+            <h2 class="mb-2">Skill Development</h2>
+            <div class="grid grid-3">
+                <div class="card">
+                    <span class="tag tag-free">Free</span>
+                    <h3 class="mt-2">Basic English</h3>
+                    <p>Improve your communication skills.</p>
+                    <button class="btn btn-secondary btn-full">Start</button>
+                </div>
+                <div class="card">
+                    <span class="tag tag-free">Free</span>
+                    <h3 class="mt-2">Computer Basics</h3>
+                    <p>Word, Excel, PowerPoint.</p>
+                    <button class="btn btn-secondary btn-full">Start</button>
+                </div>
+                <div class="card">
+                    <span class="tag tag-paid">Paid - ₹499</span>
+                    <h3 class="mt-2">Advanced Coding</h3>
+                    <p>Learn Python & Web Development.</p>
+                    <button class="btn btn-primary btn-full">Enroll</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accommodation (Dynamic) -->
+    <section class="section" style="background: rgba(255,255,255,0.02)">
+        <div class="container">
+            <h2 class="mb-2">Student Accommodation</h2>
+            <div id="accom-list" class="grid grid-3">
+                <!-- Injected via script.js -->
+                <p>Loading accommodation...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools: Flights & Loans -->
+    <section class="section">
+        <div class="container">
+            <div class="grid grid-2">
+                <!-- Flight Booking -->
+                <div class="card">
+                    <div class="card-icon">✈️</div>
+                    <h3>Flight Booking Request</h3>
+                    <p>Get the cheapest student flight rates.</p>
+                    <form class="flex-col gap-1 mt-2">
+                        <input type="text" class="form-input" placeholder="From City">
+                        <input type="text" class="form-input" placeholder="To City">
+                        <input type="date" class="form-input">
+                        <button type="button" class="btn btn-primary"
+                            onclick="alert('Flight request sent! We will contact you shortly.')">Request Quote</button>
+                    </form>
+                </div>
+
+                <!-- Education Loan -->
+                <div class="card">
+                    <div class="card-icon">🎓</div>
+                    <h3>Education Loan Enquiry</h3>
+                    <p>Low interest loans for study abroad.</p>
+                    <form class="flex-col gap-1 mt-2">
+                        <input type="text" class="form-input" placeholder="Loan Amount Needed (₹)">
+                        <select class="form-select">
+                            <option>For Study Abroad</option>
+                            <option>For Domestic Study</option>
+                        </select>
+                        <input type="tel" class="form-input" placeholder="Parent's Phone Number">
+                        <button type="button" class="btn btn-primary"
+                            onclick="alert('Loan enquiry sent! Our agent will call you.')">Callback Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

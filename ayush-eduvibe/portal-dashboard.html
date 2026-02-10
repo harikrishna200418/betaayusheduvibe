@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Student Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="portal.css">
+</head>
+
+<body class="portal-body">
+
+
+    <!-- Mobile Toggle -->
+    <button id="mobileToggle" class="btn btn-primary">☰</button>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-logo"><img src="assets/final_logo_transparent.png" alt="Ayush Eduvibe" class="nav-logo"
+                style="height:40px; margin-right:5px;">AYUSH <span>EDUVIBE</span></div>
+
+        <nav>
+            <div class="nav-item active" onclick="showTab('dashboard', this)">
+                <span class="nav-icon">🏠</span> Home
+            </div>
+            <div class="nav-item" onclick="showTab('material', this)">
+                <span class="nav-icon">📚</span> Study Material
+            </div>
+            <div class="nav-item" onclick="showTab('appointment', this)">
+                <span class="nav-icon">📞</span> Talk to Expert
+            </div>
+            <div class="nav-item" onclick="showTab('eligibility', this)">
+                <span class="nav-icon">🌍</span> Can I Go Abroad?
+            </div>
+            <div class="nav-item" onclick="showTab('apply', this)">
+                <span class="nav-icon">🚀</span> Apply for College
+            </div>
+        </nav>
+
+        <div class="user-profile">
+            <div class="avatar" id="userAvatar">U</div>
+            <div style="overflow:hidden;">
+                <div style="font-weight:600; white-space:nowrap;" id="userName">Student</div>
+                <div style="font-size:0.8rem; color: var(--text-muted); white-space:nowrap;" id="userEmail">
+                    user@email.com</div>
+            </div>
+        </div>
+        <button class="btn btn-secondary btn-full mt-2" onclick="logout()" style="padding: 12px; font-size: 1rem;">Log
+            Out</button>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Dashboard Tab -->
+        <div id="tab-dashboard" class="tab-content active">
+            <div class="header">
+                <h2>Hello! 👋</h2>
+                <button class="btn btn-secondary" style="font-size:0.9rem;">Refresh</button>
+            </div>
+
+            <p class="text-large text-muted-light mb-2">What would you like to do today?</p>
+
+            <div class="grid grid-2">
+                <div class="stat-card" style="border-left: 5px solid var(--primary); cursor:pointer;"
+                    onclick="document.querySelectorAll('.nav-item')[4].click()">
+                    <div>
+                        <h3>Start Application 🚀</h3>
+                        <p>Apply to your dream university easily.</p>
+                    </div>
+                    <button class="btn btn-primary">Start Now &rarr;</button>
+                </div>
+                <div class="stat-card" style="border-left: 5px solid var(--secondary); cursor:pointer;"
+                    onclick="document.querySelectorAll('.nav-item')[2].click()">
+                    <div>
+                        <h3>Need Help? 📞</h3>
+                        <p>Talk to our counsellor for free advice.</p>
+                    </div>
+                    <button class="btn btn-secondary">Book Call</button>
+                </div>
+            </div>
+
+            <div class="mt-2">
+                <h3 style="margin-bottom:1rem;">Your Status</h3>
+                <div
+                    style="background: var(--bg-card); padding:20px; border-radius:12px; border:1px solid var(--border-color);">
+                    <p style="margin:0;">You have not submitted any applications yet.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Free Material Tab -->
+        <div id="tab-material" class="tab-content">
+            <div class="header">
+                <h2>Free Study Books 📚</h2>
+            </div>
+            <p>Download free books and tests to prepare.</p>
+            <div class="grid grid-3">
+                <div class="card text-center">
+                    <div style="font-size:3rem; margin-bottom:1rem;">🇬🇧</div>
+                    <h3>IELTS Practice</h3>
+                    <p>English Test Papers</p>
+                    <button class="btn btn-primary btn-full" onclick="alert('Downloading PDF...')">Download PDF
+                        ⬇️</button>
+                </div>
+                <div class="card text-center">
+                    <div style="font-size:3rem; margin-bottom:1rem;">🔢</div>
+                    <h3>Math Formulas</h3>
+                    <p>GRE / SAT Basics</p>
+                    <button class="btn btn-primary btn-full" onclick="alert('Downloading PDF...')">Download PDF
+                        ⬇️</button>
+                </div>
+                <div class="card text-center">
+                    <div style="font-size:3rem; margin-bottom:1rem;">📝</div>
+                    <h3>How to Write SOP</h3>
+                    <p>Guide for Statement of Purpose</p>
+                    <button class="btn btn-primary btn-full" onclick="alert('Downloading PDF...')">Read Guide
+                        📖</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Appointment Tab -->
+        <div id="tab-appointment" class="tab-content">
+            <div class="header">
+                <h2>Talk to Expert 📞</h2>
+            </div>
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3 class="mb-2">Book a Call</h3>
+                    <form id="appointmentForm">
+                        <div class="form-group">
+                            <label class="form-label">How do you want to talk?</label>
+                            <select class="form-select">
+                                <option>Video Call (Online)</option>
+                                <option>Phone Call</option>
+                                <option>Meet at Office</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Select Date</label>
+                            <input type="date" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Select Time</label>
+                            <input type="time" class="form-input" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full btn-lg">Confirm Booking</button>
+                    </form>
+                </div>
+                <div class="card" style="background: #eff6ff;">
+                    <h3>We help you with:</h3>
+                    <ul style="list-style:none; padding:10px; font-size:1.1rem; line-height:2;">
+                        <li>✈️ Selecting Country</li>
+                        <li>🏫 Finding Universities</li>
+                        <li>💰 Education Loans</li>
+                        <li>🛂 Visa Process</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Eligibility Tab -->
+        <div id="tab-eligibility" class="tab-content">
+            <div class="header">
+                <h2>Can I Go Abroad? 🌍</h2>
+            </div>
+            <div class="card" style="max-width: 600px; margin:0 auto;">
+                <p>Answer 3 simple questions to check.</p>
+                <form id="eligibilityForm">
+                    <div class="form-group">
+                        <label class="form-label">1. What did you study last?</label>
+                        <select class="form-select" id="eli-qual">
+                            <option value="12">12th Class (Inter)</option>
+                            <option value="bach">B.Tech / Degree</option>
+                            <option value="master">Masters / PG</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">2. What was your Score/Percentage?</label>
+                        <input type="number" class="form-input" id="eli-gpa" placeholder="e.g. 70" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">3. Where do you want to go?</label>
+                        <select class="form-select" id="eli-country">
+                            <option>USA</option>
+                            <option>UK</option>
+                            <option>Canada</option>
+                            <option>Australia</option>
+                            <option>Germany</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full btn-lg">Check Now</button>
+                </form>
+                <div id="eligibilityResult"
+                    style="margin-top:20px; padding:20px; border-radius:12px; display:none; text-align:center;"></div>
+            </div>
+        </div>
+
+        <!-- Apply Tab -->
+        <div id="tab-apply" class="tab-content">
+            <div class="header">
+                <h2>Apply for College 🚀</h2>
+            </div>
+
+            <div class="app-progress">
+                <div class="progress-step active" id="step-node-1">
+                    <div class="step-dot">1</div><small>Upload</small>
+                </div>
+                <div class="progress-step" id="step-node-2">
+                    <div class="step-dot">2</div><small>Check</small>
+                </div>
+                <div class="progress-step" id="step-node-3">
+                    <div class="step-dot">3</div><small>Select</small>
+                </div>
+                <div class="progress-step" id="step-node-4">
+                    <div class="step-dot">4</div><small>Done</small>
+                </div>
+            </div>
+
+            <!-- Step 1: Uploads -->
+            <div id="apply-step-1">
+                <h3 class="text-center mb-2">Step 1: Upload Documents</h3>
+                <p class="text-center">Please take photos or upload files of your documents.</p>
+                <div class="grid grid-2">
+                    <div class="upload-zone" onclick="document.getElementById('file-passport').click()">
+                        <div class="upload-icon">🛂</div>
+                        <h4>Passport</h4>
+                        <p class="text-muted-light">Front & Back Page</p>
+                        <input type="file" id="file-passport" style="display:none"
+                            onchange="alert('Passport Selected!')">
+                        <button class="btn btn-secondary btn-full">Choose Value</button>
+                    </div>
+                    <div class="upload-zone" onclick="document.getElementById('file-marks').click()">
+                        <div class="upload-icon">📄</div>
+                        <h4>Marksheets</h4>
+                        <p class="text-muted-light">10th, 12th, or Degree</p>
+                        <input type="file" id="file-marks" style="display:none" onchange="alert('Marksheet Selected!')">
+                        <button class="btn btn-secondary btn-full">Choose File</button>
+                    </div>
+                </div>
+                <div class="text-center mt-2">
+                    <button class="btn btn-primary btn-lg" onclick="nextStep(2)">Next Step &rarr;</button>
+                </div>
+            </div>
+
+            <!-- Step 2: Checklist -->
+            <div id="apply-step-2" style="display:none;">
+                <h3 class="text-center">Step 2: Check Your Documents</h3>
+                <div class="card" style="max-width:500px; margin:0 auto;">
+                    <div class="flex-between mb-2"><span>1. Passport</span> <span class="tag tag-free">✅ Uploaded</span>
+                    </div>
+                    <div class="flex-between mb-2"><span>2. Marksheets</span> <span class="tag tag-free">✅
+                            Uploaded</span></div>
+                </div>
+                <div class="flex-center gap-1 mt-2">
+                    <button class="btn btn-secondary" onclick="prevStep(1)">&larr; Back</button>
+                    <button class="btn btn-primary btn-lg" onclick="nextStep(3)">Confirm & Next &rarr;</button>
+                </div>
+            </div>
+
+            <!-- Step 3: Select Universities -->
+            <div id="apply-step-3" style="display:none;">
+                <h3 class="text-center">Step 3: Choose University</h3>
+                <div class="grid grid-2">
+                    <label class="uni-select-card">
+                        <input type="checkbox" name="uni">
+                        <div>
+                            <h4>Oxford University</h4>
+                            <p class="text-muted-light" style="margin:0;">UK</p>
+                        </div>
+                    </label>
+                    <label class="uni-select-card">
+                        <input type="checkbox" name="uni">
+                        <div>
+                            <h4>Stanford University</h4>
+                            <p class="text-muted-light" style="margin:0;">USA</p>
+                        </div>
+                    </label>
+                </div>
+                <div class="flex-center gap-1 mt-2">
+                    <button class="btn btn-secondary" onclick="prevStep(2)">&larr; Back</button>
+                    <button class="btn btn-primary btn-lg" onclick="nextStep(4)">Submit Application &rarr;</button>
+                </div>
+            </div>
+
+            <!-- Step 4: Submit -->
+            <div id="apply-step-4" style="display:none;">
+                <div class="text-center card" style="max-width:600px; margin:0 auto;">
+                    <div style="font-size:4rem; margin-bottom:1rem;">🎉</div>
+                    <h3>Ready to Send?</h3>
+                    <p>We will send your application to the counsellor.</p>
+                    <button class="btn btn-primary btn-lg mt-2 btn-full" onclick="submitApplication()">Yes, Send My
+                        Application</button>
+                    <button class="btn btn-secondary mt-2" onclick="prevStep(3)">Back</button>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="portal.js"></script>
+</body>
+
+</html>
