@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs & Careers - AYUSH EDUVIBE</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Top Header -->
+    <div class="top-header">
+        <div class="container container-flex" style="justify-content: flex-end; gap: 20px;">
+            <a href="tel:6300810337">📞 6300810337</a>
+            <span>|</span>
+            <a href="https://wa.me/6300810337" target="_blank">Contact us on <span
+                    style="font-size: 1.2rem; margin-left: 5px;">💬</span></a>
+            <a href="mailto:info@aevibe.in">✉️ info@aevibe.in</a>
+        </div>
+    </div>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo"><img src="assets/final_logo_transparent.png" alt="Ayush Eduvibe" class="nav-logo"> AYUSH
+                <span>EDUVIBE</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="study-abroad.html" class="nav-link">Study Abroad</a>
+                <a href="eligibility.html" class="nav-link" style="color:var(--primary); font-weight:600;">Check
+                    Eligibility</a>
+                <a href="exams.html" class="nav-link">Exams</a>
+                <a href="jobs.html" class="nav-link active">Jobs</a>
+                <a href="services.html" class="nav-link">Services</a>
+            </div>
+            <button class="mobile-menu-btn" style="display:none; color:white; font-size: 24px;">☰</button>
+        </div>
+    </nav>
+
+    <section class="hero" style="padding-bottom: 50px;">
+        <div class="container text-center">
+            <h1>Launch Your Career</h1>
+            <p>Find jobs, internships, and build the perfect resume.</p>
+        </div>
+    </section>
+
+    <!-- Jobs Section (Dynamic) -->
+    <section class="section">
+        <div class="container">
+            <div class="flex-between mb-2" style="flex-wrap: wrap; gap: 1rem;">
+                <h2>Latest Jobs</h2>
+                <input type="text" id="job-search" class="form-input" style="width: 300px;"
+                    placeholder="Search jobs, company...">
+            </div>
+
+            <!-- Dynamic Container -->
+            <div id="jobs-list" class="grid grid-2">
+                <!-- Content will be injected by script.js from data.js -->
+                <p>Loading jobs...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Services -->
+    <section class="section" style="background: rgba(188, 19, 254, 0.05);">
+        <div class="container">
+            <h2 class="text-center mb-2">Professional Resume Services <span class="tag tag-paid">PAID</span></h2>
+            <div class="grid grid-3">
+                <div class="card text-center">
+                    <h3>Basic Resume</h3>
+                    <p>Clean format, standard templates.</p>
+                    <h2 style="color:var(--primary); margin: 1rem 0;">₹199</h2>
+                    <button class="btn btn-primary btn-full">Get Started</button>
+                </div>
+                <div class="card text-center" style="border: 2px solid var(--primary);">
+                    <div class="tag tag-popular" style="margin-bottom: 1rem;">BESTSELLER</div>
+                    <h3>Premium Resume</h3>
+                    <p>ATS-friendly, custom design.</p>
+                    <h2 style="color:var(--primary); margin: 1rem 0;">₹499</h2>
+                    <button class="btn btn-primary btn-full">Get Started</button>
+                </div>
+                <div class="card text-center">
+                    <h3>Portfolio Website</h3>
+                    <p>Resume + Personal Website.</p>
+                    <h2 style="color:var(--primary); margin: 1rem 0;">₹999</h2>
+                    <button class="btn btn-primary btn-full">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Internships (Static for now, can be dynamic too but user asked for core features) -->
+    <section class="section">
+        <div class="container">
+            <h2 class="mb-2">Internships</h2>
+            <div class="grid grid-3">
+                <div class="card">
+                    <span class="tag tag-free">Free Internship</span>
+                    <h3 class="mt-2">Marketing Intern</h3>
+                    <p>Learn digital marketing with live projects.</p>
+                    <button class="btn btn-secondary btn-full mt-2">Apply</button>
+                </div>
+                <div class="card">
+                    <span class="tag tag-paid">Paid Internship</span>
+                    <h3 class="mt-2">Software Intern</h3>
+                    <p>Stipend: ₹15,000/mo. Python/JS required.</p>
+                    <button class="btn btn-secondary btn-full mt-2">Apply</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Load Data First -->
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

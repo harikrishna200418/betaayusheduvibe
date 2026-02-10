@@ -1,0 +1,451 @@
+/* Portal Specific Styles - Enhanced for Usability & Responsiveness (Light Theme) */
+:root {
+    --sidebar-width: 280px;
+    --header-height: 70px;
+    --input-height: 50px;
+}
+
+.portal-body {
+    background-color: #f3f4f6;
+    /* Lighter background for dashboard */
+    display: flex;
+    min-height: 100vh;
+    font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text-main);
+}
+
+/* --- Improved Accessibility & Usability Classes --- */
+.text-large {
+    font-size: 1.2rem;
+}
+
+.text-muted-light {
+    color: #9ca3af;
+}
+
+/* --- Sidebar --- */
+.sidebar {
+    width: var(--sidebar-width);
+    background: #ffffff;
+    border-right: 1px solid var(--border-color);
+    position: fixed;
+    height: 100vh;
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #111827;
+}
+
+.sidebar-logo span {
+    color: var(--primary);
+}
+
+.nav-item {
+    padding: 1rem 1.2rem;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    /* Standard radius */
+    color: #4b5563;
+    /* Grey-600 */
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.05rem;
+    font-weight: 500;
+    border: 1px solid transparent;
+}
+
+.nav-item:hover {
+    background: #f3f4f6;
+    color: #111827;
+}
+
+.nav-item.active {
+    background: #eff6ff;
+    /* Light blue bg */
+    color: var(--primary);
+    border-color: transparent;
+    font-weight: 600;
+}
+
+.nav-icon {
+    font-size: 1.4rem;
+}
+
+/* User Profile in Sidebar */
+.user-profile {
+    margin-top: auto;
+    padding: 1rem;
+    background: #f9fafb;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.avatar {
+    width: 45px;
+    height: 45px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 1.2rem;
+}
+
+/* --- Main Content --- */
+.main-content {
+    margin-left: var(--sidebar-width);
+    flex: 1;
+    padding: 2rem;
+    width: calc(100% - var(--sidebar-width));
+    transition: margin-left 0.3s ease, width 0.3s ease;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header h2 {
+    font-size: 2rem;
+    margin: 0;
+    color: #111827;
+}
+
+/* Cards & Stats */
+.stat-card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary);
+}
+
+.stat-card h3 {
+    font-size: 1.2rem;
+    /* Adjusted for better hierarchy */
+    margin-bottom: 0.5rem;
+    color: #111827;
+    font-weight: 600;
+}
+
+.stat-card p {
+    font-size: 1.1rem;
+    opacity: 1;
+    color: #6b7280;
+    margin-bottom: 1.5rem;
+}
+
+/* Form Inputs Enhanced */
+.form-input,
+.form-select {
+    height: var(--input-height);
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    color: #1f2937;
+    padding: 0 16px;
+    font-size: 1rem;
+    border-radius: 8px;
+}
+
+.form-input:focus,
+.form-select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-label {
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #374151;
+}
+
+/* Tabs Animation */
+.tab-content {
+    display: none;
+    animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* --- Application Progress Wizard --- */
+.app-progress {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+}
+
+.app-progress::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #e5e7eb;
+    /* Light grey line */
+    z-index: 0;
+    border-radius: 2px;
+}
+
+.progress-step {
+    position: relative;
+    z-index: 1;
+    background: transparent;
+    /* Transparent so it sits on bg */
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: #6b7280;
+}
+
+/* We need a background on the dot wrapper or the dot itself to hide the line? 
+   Actually the dot is on top. 
+   But the text is below.
+   Let's ensure the dot has a background.
+*/
+
+.step-dot {
+    width: 40px;
+    height: 40px;
+    background: #ffffff;
+    font-size: 1.1rem;
+    border: 3px solid #e5e7eb;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    transition: 0.3s;
+    color: #9ca3af;
+    position: relative;
+    z-index: 2;
+}
+
+.progress-step.active .step-dot {
+    border-color: var(--primary);
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2);
+    transform: scale(1.1);
+}
+
+.progress-step.completed .step-dot {
+    background: #10B981;
+    /* Success Green */
+    border-color: #10B981;
+    color: white;
+}
+
+.progress-step small {
+    font-size: 0.85rem;
+    font-weight: 600;
+    background: #f3f4f6;
+    /* Match body bg to cover line if needed, or just text */
+    padding: 0 5px;
+}
+
+/* Large Action Cards (Upload, Select) */
+.upload-zone {
+    border: 2px dashed #d1d5db;
+    padding: 2.5rem;
+    text-align: center;
+    border-radius: 16px;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+    background: #ffffff;
+    transition: 0.2s;
+}
+
+.upload-zone:hover {
+    border-color: var(--primary);
+    background: #eff6ff;
+}
+
+.upload-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.uni-select-card {
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    border: 1px solid #e5e7eb;
+    transition: 0.2s;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.uni-select-card:hover {
+    border-color: var(--primary);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom Checkbox Style */
+.uni-select-card input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--primary);
+}
+
+.uni-select-card input:checked+div h4 {
+    color: var(--primary);
+}
+
+/* --- Mobile Toggle Button --- */
+#mobileToggle {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 2000;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    background: #ffffff;
+    color: #111827;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+}
+
+/* --- Responsive Queries --- */
+
+/* Tablet & Mobile */
+@media (max-width: 1024px) {
+    :root {
+        --sidebar-width: 0px;
+    }
+
+    .sidebar {
+        width: 280px;
+        transform: translateX(-100%);
+        border-right: 1px solid #e5e7eb;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+    #mobileToggle {
+        display: flex;
+    }
+}
+
+/* Mobile Small */
+@media (max-width: 600px) {
+    .main-content {
+        padding: 1rem;
+        padding-top: 5rem;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header h2 {
+        font-size: 1.5rem;
+    }
+
+    .app-progress {
+        padding: 0 10px;
+    }
+
+    .step-dot {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+    }
+
+    .progress-step small {
+        font-size: 0.75rem;
+    }
+
+    .grid-2,
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-card {
+        padding: 1.5rem;
+    }
+
+    .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+        padding: 16px;
+    }
+
+    .uni-select-card {
+        flex-direction: row;
+        align-items: start;
+    }
+}

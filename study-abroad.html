@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Abroad - AYUSH EDUVIBE</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Top Header -->
+    <div class="top-header">
+        <div class="container container-flex" style="justify-content: flex-end; gap: 20px;">
+            <a href="tel:6300810337">📞 6300810337</a>
+            <span>|</span>
+            <a href="https://wa.me/6300810337" target="_blank">Contact us on <span
+                    style="font-size: 1.2rem; margin-left: 5px;">💬</span></a>
+            <a href="mailto:info@aevibe.in">✉️ info@aevibe.in</a>
+        </div>
+    </div>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo"><img src="assets/final_logo_transparent.png" alt="Ayush Eduvibe" class="nav-logo"> AYUSH
+                <span>EDUVIBE</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="study-abroad.html" class="nav-link active">Study Abroad</a>
+                <a href="eligibility.html" class="nav-link" style="color:var(--primary); font-weight:600;">Check
+                    Eligibility</a>
+                <a href="exams.html" class="nav-link">Exams</a>
+                <a href="jobs.html" class="nav-link">Jobs</a>
+                <a href="services.html" class="nav-link">Services</a>
+            </div>
+            <button class="mobile-menu-btn" style="display:none; color:white; font-size: 24px;">☰</button>
+        </div>
+    </nav>
+
+    <section class="hero" style="padding-bottom: 50px;">
+        <div class="container text-center">
+            <h1>Global Education Opportunities</h1>
+            <p>Explore top universities and scholarships in popular countries.</p>
+        </div>
+    </section>
+
+    <!-- Country Selection / Filter -->
+    <section class="section">
+        <div class="container">
+            <h2 class="mb-2">Select Destination</h2>
+            <!-- Destination Cards Grid with Exact Fit Layout -->
+            <div class="grid grid-3" style="gap: 2rem;">
+
+                <!-- USA -->
+                <button data-country="USA" class="card btn-secondary"
+                    style="padding: 0; overflow: hidden; display: flex; flex-direction: column; border: 1px solid var(--border-color); border-radius: 16px; transition: transform 0.2s;">
+                    <div style="height: 180px; width: 100%;">
+                        <img src="assets/usa_statue.jpg" alt="USA"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="padding: 1rem; width: 100%; background: #ffffff;">
+                        <h3
+                            style="display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 1.1rem; color: #1f2937;">
+                            <img src="assets/flag_usa.png"
+                                style="width: 24px; height: 24px; border-radius: 50%; object-fit: cover;">
+                            United States
+                        </h3>
+                        <div
+                            style="margin-top: 8px; border-top: 1px dashed #e5e7eb; padding-top: 8px; color: #4b5563; font-weight: 600; font-size: 0.9rem;">
+                            45K+ Courses
+                        </div>
+                    </div>
+                </button>
+
+                <!-- UK -->
+                <button data-country="UK" class="card btn-secondary"
+                    style="padding: 0; overflow: hidden; display: flex; flex-direction: column; border: 1px solid var(--border-color); border-radius: 16px; transition: transform 0.2s;">
+                    <div style="height: 180px; width: 100%;">
+                        <img src="assets/uk_tower.jpg" alt="UK" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="padding: 1rem; width: 100%; background: #ffffff;">
+                        <h3
+                            style="display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 1.1rem; color: #1f2937;">
+                            <img src="assets/flag_uk.png"
+                                style="width: 24px; height: 24px; border-radius: 50%; object-fit: cover;">
+                            United Kingdom
+                        </h3>
+                        <div
+                            style="margin-top: 8px; border-top: 1px dashed #e5e7eb; padding-top: 8px; color: #4b5563; font-weight: 600; font-size: 0.9rem;">
+                            40K+ Courses
+                        </div>
+                    </div>
+                </button>
+
+                <!-- Canada -->
+                <button data-country="Canada" class="card btn-secondary"
+                    style="padding: 0; overflow: hidden; display: flex; flex-direction: column; border: 1px solid var(--border-color); border-radius: 16px; transition: transform 0.2s;">
+                    <div style="height: 180px; width: 100%;">
+                        <img src="assets/canada_city.jpg" alt="Canada"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="padding: 1rem; width: 100%; background: #ffffff;">
+                        <h3
+                            style="display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 1.1rem; color: #1f2937;">
+                            <img src="assets/flag_canada.png"
+                                style="width: 24px; height: 24px; border-radius: 50%; object-fit: cover;">
+                            Canada
+                        </h3>
+                        <div
+                            style="margin-top: 8px; border-top: 1px dashed #e5e7eb; padding-top: 8px; color: #4b5563; font-weight: 600; font-size: 0.9rem;">
+                            35K+ Courses
+                        </div>
+                    </div>
+                </button>
+
+                <!-- Australia -->
+                <button data-country="Australia" class="card btn-secondary"
+                    style="padding: 0; overflow: hidden; display: flex; flex-direction: column; border: 1px solid var(--border-color); border-radius: 16px; transition: transform 0.2s;">
+                    <div style="height: 180px; width: 100%;">
+                        <img src="assets/australia_opera.jpg" alt="Australia"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="padding: 1rem; width: 100%; background: #ffffff;">
+                        <h3
+                            style="display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 1.1rem; color: #1f2937;">
+                            <img src="assets/flag_australia.png"
+                                style="width: 24px; height: 24px; border-radius: 50%; object-fit: cover;">
+                            Australia
+                        </h3>
+                        <div
+                            style="margin-top: 8px; border-top: 1px dashed #e5e7eb; padding-top: 8px; color: #4b5563; font-weight: 600; font-size: 0.9rem;">
+                            25K+ Courses
+                        </div>
+                    </div>
+                </button>
+
+                <!-- Germany -->
+                <button data-country="Germany" class="card btn-secondary"
+                    style="padding: 0; overflow: hidden; display: flex; flex-direction: column; border: 1px solid var(--border-color); border-radius: 16px; transition: transform 0.2s;">
+                    <div style="height: 180px; width: 100%;">
+                        <img src="assets/germany_gate.jpg" alt="Germany"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="padding: 1rem; width: 100%; background: #ffffff;">
+                        <h3
+                            style="display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 1.1rem; color: #1f2937;">
+                            <img src="assets/flag_germany.png"
+                                style="width: 24px; height: 24px; border-radius: 50%; object-fit: cover;">
+                            Germany
+                        </h3>
+                        <div
+                            style="margin-top: 8px; border-top: 1px dashed #e5e7eb; padding-top: 8px; color: #4b5563; font-weight: 600; font-size: 0.9rem;">
+                            10K+ Courses
+                        </div>
+                    </div>
+                </button>
+
+                <!-- All -->
+                <button data-country="All" class="card btn-primary"
+                    style="padding: 0; overflow: hidden; display: flex; flex-direction: column; border: 1px solid var(--primary); border-radius: 16px; transition: transform 0.2s;">
+                    <div style="height: 180px; width: 100%;">
+                        <img src="assets/explore_global.jpg" alt="Global"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="padding: 1rem; width: 100%; background: #ffffff;">
+                        <h3
+                            style="display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 1.1rem; color: #1f2937;">
+                            <img src="assets/flag_global.png"
+                                style="width: 24px; height: 24px; border-radius: 50%; object-fit: cover;">
+                            Explore All
+                        </h3>
+                        <div
+                            style="margin-top: 8px; border-top: 1px dashed #e5e7eb; padding-top: 8px; color: #4b5563; font-weight: 600; font-size: 0.9rem;">
+                            View Global Options
+                        </div>
+                    </div>
+                </button>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- University Rankings & Scholarships (Dynamic) -->
+    <section class="section" style="background: rgba(255,255,255,0.02)">
+        <div class="container">
+            <h2 class="mb-2">Top Universities & Scholarships</h2>
+
+            <div id="universities-list" class="grid grid-2">
+                <!-- Injected via script.js -->
+                <p>Loading universities...</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

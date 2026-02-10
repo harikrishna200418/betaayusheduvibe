@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AYUSH EDUVIBE - The Future of Learning</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Specific Home Page Animations */
+        .feature-card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+    <!-- Top Header -->
+    <div class="top-header">
+        <div class="container container-flex" style="justify-content: flex-end; gap: 20px;">
+            <a href="tel:6300810337">📞 6300810337</a>
+            <span style="color: rgba(255,255,255,0.5);">|</span>
+            <a href="https://wa.me/6300810337" target="_blank">Contact us on <span
+                    style="font-size: 1.2rem; margin-left: 5px;">💬</span></a>
+            <a href="mailto:info@aevibe.in">✉️ info@aevibe.in</a>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="assets/final_logo_transparent.png" alt="Ayush Eduvibe" class="nav-logo">
+                AYUSH <span>EDUVIBE</span>
+            </div>
+            <button class="mobile-menu-btn" style="display:none; font-size: 24px;">☰</button>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="study-abroad.html" class="nav-link">Study Abroad</a>
+                <a href="eligibility.html" class="nav-link" style="color:var(--primary); font-weight:600;">Check
+                    Eligibility</a>
+                <a href="exams.html" class="nav-link">Exams</a>
+                <a href="jobs.html" class="nav-link">Jobs</a>
+                <a href="services.html" class="nav-link">Services</a>
+
+                <!-- Auth Buttons (Default) -->
+                <div id="auth-buttons" style="display:inline-block;">
+                    <a href="portal-login.html" class="btn btn-primary"
+                        style="padding: 8px 25px; font-size: 0.9rem;">LOGIN/REGISTER</a>
+                </div>
+
+                <!-- User Profile (Hidden by default, shown if logged in) -->
+                <div id="nav-user-profile" class="nav-user-profile-container">
+                    <div id="nav-user-avatar" class="nav-user-avatar">U</div>
+                    <span id="nav-user-name" style="font-weight:500; font-size:0.9rem; color: var(--text-main);">Hi,
+                        User</span>
+                    <a href="portal-dashboard.html"
+                        style="margin-left:5px; color:var(--text-muted); font-size:0.8rem;">Dashboard &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge" style="color: #36454F; font-weight: bold;">We Guide. Your Dream Takes Off. 🚀
+                </div>
+                <h1>Empowering Your Future With<br>Next-Gen Education</h1>
+                <p>Access scholarships, jobs, exam prep, and study abroad packages instantly. Simple, fast, and built
+                    for everyone.</p>
+
+                <div class="flex-center gap-1 mt-2">
+                    <a href="portal-login.html" class="btn btn-primary btn-lg">Get Started</a>
+                    <a href="study-abroad.html" class="btn btn-secondary btn-lg">Explore Colleges</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Services Grid -->
+    <section class="section">
+        <div class="container">
+            <h2 class="text-center mb-2">Everything You Need <span style="color:var(--primary)">In One Place</span></h2>
+
+            <div class="grid grid-3">
+                <!-- Registration -->
+                <a href="portal-login.html" class="card">
+                    <div class="card-icon">👤</div>
+                    <h3>Student Registration</h3>
+                    <p>Create your simple profile to unlock all features.</p>
+                </a>
+
+                <!-- Study Abroad -->
+                <a href="study-abroad.html" class="card">
+                    <div class="card-icon">✈️</div>
+                    <h3>Study Abroad</h3>
+                    <p>Universities, Rankings, and Scholarships for top countries.</p>
+                </a>
+
+                <!-- Exams -->
+                <a href="exams.html" class="card">
+                    <div class="card-icon">📝</div>
+                    <h3>Exam Preparation</h3>
+                    <p>Free and paid prep for IELTS, DET, PTE, TOEFL & more.</p>
+                </a>
+
+                <!-- Jobs -->
+                <a href="jobs.html" class="card">
+                    <div class="card-icon">💼</div>
+                    <h3>Jobs & Careers</h3>
+                    <p>Find part-time, full-time jobs and internships easily.</p>
+                </a>
+
+                <!-- Accommodation -->
+                <a href="services.html" class="card">
+                    <div class="card-icon">🏠</div>
+                    <h3>Accommodation</h3>
+                    <p>Find safe places to stay near your university.</p>
+                </a>
+
+                <!-- Loan Assistance -->
+                <a href="services.html" class="card">
+                    <div class="card-icon">💰</div>
+                    <h3>Education Loans</h3>
+                    <p>Simple enquiry process for financial support.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Guidance Steps Section -->
+    <section class="section guidance-section" style="background: #ffffff; padding: 40px 0;">
+        <div class="container">
+            <!-- Header for Guidance Section -->
+            <div class="text-center mb-2" style="max-width: 900px; margin: 0 auto 3rem auto;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Step By Step Guide <br>To Studying Abroad</h2>
+                <p style="text-align: center; color: var(--text-muted); font-size: 1rem; line-height: 1.8;">
+                    Ayush EduVibe is a global education and career-development platform helping students achieve their
+                    dreams of studying abroad and gaining future-ready skills. We provide expert guidance in university
+                    admissions, visa consulting, and skill training in Artificial Intelligence, Data Analytics, Cloud
+                    Computing, and Software Development. With a 98% visa success rate and partnerships with top
+                    universities across the UK, USA, Canada, Australia, and Europe, Ayush EduVibe ensures that every
+                    student is prepared for academic and professional success in a rapidly changing world.
+                </p>
+            </div>
+
+            <div class="guidance-layout">
+                <!-- Sidebar Menu -->
+                <div class="guidance-menu">
+                    <div class="guidance-item" onclick="switchGuidance(0)">Research</div>
+                    <div class="guidance-item active" onclick="switchGuidance(1)">Get In Touch With Our Counsellors
+                    </div>
+                    <div class="guidance-item" onclick="switchGuidance(2)">Application</div>
+                    <div class="guidance-item" onclick="switchGuidance(3)">Financial Support</div>
+                    <div class="guidance-item" onclick="switchGuidance(4)">Practice Your English Skills</div>
+                    <div class="guidance-item" onclick="switchGuidance(5)">Getting Accepted</div>
+                    <div class="guidance-item" onclick="switchGuidance(6)">Student Visa</div>
+                    <div class="guidance-item" onclick="switchGuidance(7)">Live Your Dream!</div>
+                </div>
+
+                <!-- Content Area -->
+                <div class="guidance-display">
+                    <!-- Specific Content for "Get In Touch" Active State -->
+                    <div class="guidance-panel active" id="guidance-panel-1">
+
+                        <div class="sphere-animation sphere-top"></div>
+                        <div class="sphere-animation sphere-bottom"></div>
+                        <div class="blue-circle-bg"></div>
+                        <div class="guidance-text-wrapper">
+                            <h2>Get In Touch With Our <br>Counsellors</h2>
+                            <p>Our counsellors use their experience and professional expertise to help you make the
+                                right choice. We take into consideration several factors, such as your specialisation,
+                                projected career options, preferences, personality and match them with universities
+                                which have the best faculty in your choice of courses.</p>
+                        </div>
+                        <div class="guidance-image-wrapper">
+                            <img src="assets/counselling.webp" alt="Counseling" class="guidance-img">
+                        </div>
+                    </div>
+
+                    <!-- Placeholder for other tabs (hidden by default) -->
+                    <!-- Research (0) -->
+                    <div class="guidance-panel" id="guidance-panel-0" style="display:none;">
+
+                        <div class="sphere-animation sphere-top"></div>
+                        <div class="sphere-animation sphere-bottom"></div>
+                        <div class="blue-circle-bg"></div>
+                        <div class="guidance-text-wrapper">
+                            <h2>Research</h2>
+                            <p style="text-align: justify;">Do a bit of research beforehand. In the beginning it
+                                definitely feels overwhelming, but the best way to go about it is by eliminating things
+                                that go against your interest or choice. If you can narrow down to a list of the
+                                institutions or courses, or even what kind of career path that you have in mind, it is
+                                easier to figure out the best way to go about it.</p>
+                        </div>
+                        <div class="guidance-image-wrapper">
+                            <img src="assets/research.jpg" alt="Research" class="guidance-img">
+                        </div>
+                    </div>
+                    <div class="guidance-panel" id="guidance-panel-2" style="display:none;">
+
+                        <div class="diamond-animation diamond-top"></div>
+                        <div class="diamond-animation diamond-bottom"></div>
+                        <div class="blue-circle-bg"></div>
+                        <div class="guidance-text-wrapper">
+                            <h2>Application</h2>
+                            <p>After selecting your preferred institution and course, it’s time to begin the application
+                                process. Your counsellor will guide you through every step, from organizing your
+                                documents and meeting the required criteria to submitting your application. We will be
+                                with you throughout the entire process, ensuring a smooth and successful application
+                                experience.</p>
+                        </div>
+                        <div class="guidance-image-wrapper">
+                            <img src="assets/application_transform.png" alt="Application Process" class="guidance-img">
+                        </div>
+                    </div>
+                    <div class="guidance-panel" id="guidance-panel-3" style="display:none;">
+
+                        <div class="concentric-container concentric-top">
+                            <div class="concentric-ring"></div>
+                            <div class="concentric-ring"></div>
+                            <div class="concentric-ring"></div>
+                        </div>
+                        <div class="concentric-container concentric-bottom">
+                            <div class="concentric-ring"></div>
+                            <div class="concentric-ring"></div>
+                            <div class="concentric-ring"></div>
+                        </div>
+                        <div class="blue-circle-bg"></div>
+                        <div class="guidance-text-wrapper">
+                            <h2>Financial Support</h2>
+                            <p>We offer complete support throughout the financial process, guiding you from
+                                understanding costs to securing education loans. Our consultancy partners with top
+                                lenders like Avanse, Credila, Auxilo, M Power, Prodigy, InCred, and nationalized banks
+                                including SBI, Canara Bank, and Bank of India, providing competitive rates and flexible
+                                repayment options to help you fund your studies with ease.</p>
+                        </div>
+                        <div class="guidance-image-wrapper">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaFFxk4a715e25Y_POa1xfxPeJMpkG8EMYsA&s"
+                                alt="Financial Support" class="guidance-img">
+                        </div>
+                    </div>
+                    <div class="guidance-panel" id="guidance-panel-4" style="display:none;">
+
+                        <div class="rotating-container rotating-top">
+                            <div class="rotating-circle rotate-cw"></div>
+                            <div class="rotating-circle rotate-ccw"></div>
+                            <div class="rotating-circle rotate-cw"></div>
+                        </div>
+                        <div class="rotating-container rotating-bottom">
+                            <div class="rotating-circle rotate-ccw"></div>
+                            <div class="rotating-circle rotate-cw"></div>
+                            <div class="rotating-circle rotate-ccw"></div>
+                        </div>
+                        <div class="blue-circle-bg"></div>
+                        <div class="guidance-text-wrapper">
+                            <h2>Practice Your English Skills</h2>
+                            <p style="text-align: justify;">A number of institutions require English proficiency tests
+                                such as IELTS, PTE etc. We will provide you the necessary resources to help you clear
+                                the exam, but you need to put in work as well. Not only is the medium of instruction
+                                English, you would also need your language skills to navigate everyday life as well.</p>
+                        </div>
+                        <div class="guidance-image-wrapper">
+                            <img src="assets/english_typing.jpg" alt="Practice English" class="guidance-img">
+                        </div>
+                    </div>
+                    <div class="guidance-panel" id="guidance-panel-5" style="display:none;">
+
+                        <div class="rotating-container rotating-top">
+                            <div class="rotating-circle rotate-cw"></div>
+                            <div class="rotating-circle rotate-ccw"></div>
+                            <div class="rotating-circle rotate-cw"></div>
+                        </div>
+                        <div class="rotating-container rotating-bottom">
+                            <div class="rotating-circle rotate-ccw"></div>
+                            <div class="rotating-circle rotate-cw"></div>
+                            <div class="rotating-circle rotate-ccw"></div>
+                        </div>
+                        <div class="blue-circle-bg"></div>
+                        <div class="guidance-text-wrapper">
+                            <h2>Getting Accepted</h2>
+                            <p style="text-align: justify;">The wait for the acceptance letter can be nerve-wrecking but
+                                we will always be there for any moral support or if you need help in choosing the right
+                                option out of the multiple courses and schools you have been accepted into. Once all is
+                                set, we will guide you through the next steps ahead.</p>
+                        </div>
+                        <div class="guidance-image-wrapper">
+                            <img src="assets/security_cloud.jpg" alt="Getting Accepted" class="guidance-img">
+                        </div>
+                    </div>
+                    <div class="guidance-panel" id="guidance-panel-6" style="display:none;">
+
+                        <div class="wave-container wave-top">
+                            <svg class="wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"
+                                fill="currentColor">
+                                <path
+                                    d="M 64 128 L 64.5 128 L 32 95 L 0 64 L 0 0 L 64 0 L 128 64 L 128 192 L 96 223 L 63.5 256 L 0 256 L 0 192 Z M 256 64 L 256 192 L 224 223 L 191.5 256 L 128 256 L 128 192 L 192 128 L 192.5 128 L 160 95 L 128 64 L 128 0 L 192 0 Z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="wave-container wave-bottom">
+                            <svg class="wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"
+                                fill="currentColor">
+                                <path
+                                    d="M 64 128 L 64.5 128 L 32 95 L 0 64 L 0 0 L 64 0 L 128 64 L 128 192 L 96 223 L 63.5 256 L 0 256 L 0 192 Z M 256 64 L 256 192 L 224 223 L 191.5 256 L 128 256 L 128 192 L 192 128 L 192.5 128 L 160 95 L 128 64 L 128 0 L 192 0 Z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="blue-circle-bg"></div>
+                        <div class="guidance-text-wrapper">
+                            <h2>Student Visa</h2>
+                            <p style="text-align: justify;">Simply enjoy the excitement of your acceptance and let us
+                                deal with the grunt work of getting your student visa done. We will streamline the
+                                entire process and help your sort, organise and apply so that you can get your student
+                                visa done without hassle.</p>
+                        </div>
+                        <div class="guidance-image-wrapper">
+                            <img src="assets/student_visa.jpg" alt="Student Visa" class="guidance-img">
+                        </div>
+                    </div>
+                    <div class="guidance-panel" id="guidance-panel-7" style="display:none;">
+
+                        <div class="wave-container wave-top">
+                            <svg class="wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"
+                                fill="currentColor">
+                                <path
+                                    d="M 64 128 L 64.5 128 L 32 95 L 0 64 L 0 0 L 64 0 L 128 64 L 128 192 L 96 223 L 63.5 256 L 0 256 L 0 192 Z M 256 64 L 256 192 L 224 223 L 191.5 256 L 128 256 L 128 192 L 192 128 L 192.5 128 L 160 95 L 128 64 L 128 0 L 192 0 Z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="wave-container wave-bottom">
+                            <svg class="wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"
+                                fill="currentColor">
+                                <path
+                                    d="M 64 128 L 64.5 128 L 32 95 L 0 64 L 0 0 L 64 0 L 128 64 L 128 192 L 96 223 L 63.5 256 L 0 256 L 0 192 Z M 256 64 L 256 192 L 224 223 L 191.5 256 L 128 256 L 128 192 L 192 128 L 192.5 128 L 160 95 L 128 64 L 128 0 L 192 0 Z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="blue-circle-bg"></div>
+                        <div class="guidance-text-wrapper">
+                            <h2>Live Your Dream!</h2>
+                            <p style="text-align: justify;">Our support does not stop at getting you into a university.
+                                Once we get your visa done and you are all set to go, we will be right by your side,
+                                with any help you might need, such as finding accommodation, SIM cards, money exchange,
+                                bank account, health insurance and more.</p>
+                        </div>
+                        <div class="guidance-image-wrapper">
+                            <img src="assets/live_dream.jpg" alt="Live Your Dream" class="guidance-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function switchGuidance(index) {
+            // Update Menu Items
+            document.querySelectorAll('.guidance-item').forEach((item, i) => {
+                if (i === index) item.classList.add('active');
+                else item.classList.remove('active');
+            });
+
+            // Update Content Panels
+            document.querySelectorAll('.guidance-panel').forEach(panel => {
+                panel.style.display = 'none';
+                panel.classList.remove('active');
+            });
+
+            const selectedPanel = document.getElementById('guidance-panel-' + index);
+            if (selectedPanel) {
+                // Flex for the main styled ones, block for others
+                selectedPanel.style.display = (index >= 0 && index <= 7) ? 'flex' : 'block';
+                if (index >= 0 && index <= 7) {
+                    selectedPanel.style.display = 'grid'; // Grid for the layout of the complex ones
+                }
+                selectedPanel.classList.add('active');
+            }
+        }
+    </script>
+
+    <!-- Stats / Trust -->
+    <section class="section" style="background: rgba(255,255,255,0.02);">
+        <div class="container">
+            <div class="grid grid-4 text-center">
+                <div>
+                    <h2 style="color:var(--primary); margin-bottom:0;">100k+</h2>
+                    <p>Students</p>
+                </div>
+                <div>
+                    <h2 style="color:var(--secondary); margin-bottom:0;">5000+</h2>
+                    <p>Universities</p>
+                </div>
+                <div>
+                    <h2 style="color:var(--accent); margin-bottom:0;">100%</h2>
+                    <p>Scholarships Info</p>
+                </div>
+                <div>
+                    <h2 style="color:var(--accent); margin-bottom:0;">24/7</h2>
+                    <p>Support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Brand Column -->
+                <div class="footer-brand">
+                    <div class="footer-logo">AYUSH <span>EDUVIBE</span></div>
+                    <p class="footer-desc">Simplifying international education. From selecting your dream country to
+                        securing your global career, we guide you every step of the way.</p>
+                </div>
+
+                <!-- Links Section Wrapper -->
+                <div class="footer-links-wrapper">
+                    <!-- Map Button -->
+                    <div class="footer-map-section" style="display: flex; align-items: flex-start; padding-top: 5px;">
+                        <a href="https://share.google/eMYNKnAnYvx1q9sQ4" target="_blank"
+                            style="display: inline-block; transition: transform 0.2s;">
+                            <img src="https://media.istockphoto.com/id/1308342065/vector/folded-location-map-with-marker-city-map-with-pin-pointer-gps-navigation-map-with-city.jpg?s=612x612&w=0&k=20&c=E9DP4dIwSdwaveNwcYU2LzBeKuBoKLa7nsTxTWDHObw="
+                                alt="Map" style="height: 80px; border-radius: 10px; border: 2px solid white;">
+                        </a>
+                    </div>
+                    <!-- Resources -->
+                    <div class="footer-column">
+                        <h4>RESOURCES</h4>
+                        <ul>
+                            <li><a href="study-abroad.html">Countries</a></li>
+                            <li><a href="portal-dashboard.html">Eligibility Tool</a></li>
+                            <li><a href="jobs.html">Career Paths</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact Details (New) -->
+                    <div class="footer-column contact-column">
+                        <h4>Contact Details</h4>
+                        <div class="contact-info">
+                            <p>Kokapet,<br>Hyderabad,</p>
+                            <p>Phone: <a href="tel:+916300810337" class="contact-link">+91-6300810337</a></p>
+                            <div class="whatsapp-inline">
+                                <span>Contact us on</span>
+                                <a href="https://wa.me/916300810337" target="_blank" class="whatsapp-icon-link">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" fill="#25D366">
+                                        <path
+                                            d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.993.55 1.767.846 2.802.846h.001c3.181 0 5.768-2.587 5.769-5.769-.001-3.18-2.588-5.764-5.776-5.764zm12 5.768c0 6.627-5.373 12-12 12s-12-5.373-12-12 5.373-12 12-12 12 5.373 12 12zm-4.322 3.193c-.156-.275-.595-.443-1.25-.769-.652-.326-3.837-1.89-4.43-2.108-.592-.217-.676-.176-.948.219-.271.4-.95.178-1.571-.161-.621-.339-2.03-1.218-3.078-2.457-.272-.321-.148-.564.129-.838.271-.27.568-.78.85-1.077.279-.297.373-.509.567-.84.195-.331.098-.621-.048-.918-.149-.297-1.328-3.208-1.819-4.394-.479-1.157-.965-1-1.328-1.018-.328-.016-.704-.02-1.08-.02-.375 0-.986.14-1.5.702-.516.562-1.967 1.922-1.967 4.69 0 2.766 2.015 5.438 4.688 8.11 2.672 2.671 7.218 5.167 11.232 5.167 4.015 0 6.33-2.479 6.33-4.349 0-1.871-1.408-2.905-1.859-3.32z" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <p>Email: <a href="mailto:info@aevibe.in" class="contact-link">info@aevibe.in</a></p>
+                            <p class="hours">Mon-Fri: 9:00AM - 6:30PM</p>
+                            <p class="hours">Sat-Sun: 8:30AM - 3:30PM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floating WhatsApp Button (Bottom Left) -->
+                <a href="https://wa.me/916300810337" target="_blank" class="floating-whatsapp">
+                    <svg viewBox="0 0 32 32" class="whatsapp-logo-float">
+                        <path
+                            d="M16 2C8.268 2 2 8.268 2 16c0 2.67.759 5.164 2.067 7.291L2.5 29.5l6.45-1.936A13.91 13.91 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.562c-2.31 0-4.498-.69-6.343-1.884l-.455-.294-4.008 1.203 1.226-3.868-.288-.475C5.071 20.311 4.438 18.22 4.438 16c0-6.377 5.185-11.562 11.562-11.562 6.377 0 11.562 5.185 11.562 11.562 0 6.377-5.185 11.562-11.562 11.562z"
+                            fill="#FFF" />
+                        <path
+                            d="M21.996 20.25c-.246-.123-1.464-.723-1.691-.806-.226-.082-.391-.123-.556.123-.165.247-.638.806-.782.969-.144.165-.288.185-.535.062-2.126-1.056-3.525-1.815-4.921-4.223-.178-.308-.019-.475.104-.598.112-.112.247-.289.37-.433.123-.144.165-.247.247-.412.082-.165.041-.309-.021-.433-.062-.123-.556-1.339-.761-1.834-.2-.482-.403-.418-.556-.426l-.474-.009c-.165 0-.432.062-.659.309-.227.247-.865.845-.865 2.061 0 1.216.885 2.391 1.009 2.556.123.165 3.447 5.266 8.353 7.382 2.872 1.238 3.961.993 4.675.927.788-.073 1.464-.6 1.67-1.176.206-.576.206-1.071.144-1.176-.062-.103-.227-.185-.474-.308z"
+                            fill="#FFF" />
+                    </svg>
+                </a>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Ayush EduVibe. Built for outcomes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Check for Logged In User on Home Page
+        document.addEventListener('DOMContentLoaded', () => {
+            const session = localStorage.getItem('portal_session');
+            if (session) {
+                // User is logged in
+                let name = session.split('@')[0];
+                const displayName = name.charAt(0).toUpperCase() + name.slice(1);
+
+                document.getElementById('nav-user-profile').style.display = 'flex';
+                document.getElementById('nav-user-name').innerText = 'Hi, ' + displayName;
+                document.getElementById('nav-user-avatar').innerText = displayName.charAt(0);
+
+                // Keep the Login/Join buttons visible as per user screenshot? 
+                // Creating a specific look: 
+                // Screenshot shows BOTH "Login | JOIN PORTAL" AND "Hi, Krishna".
+                // I will keep them but maybe adjust layout if it breaks.
+                // If the user wants to HIDE login when logged in, valid, but screenshot implies otherwise or maybe that was a pre-login state with a mock.
+                // I'll keep both for now as per specific "Show home page like this" with the image provided.
+            }
+        });
+    </script>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

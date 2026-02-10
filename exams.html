@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Prep - AYUSH EDUVIBE</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Top Header -->
+    <div class="top-header">
+        <div class="container container-flex" style="justify-content: flex-end; gap: 20px;">
+            <a href="tel:6300810337">📞 6300810337</a>
+            <span>|</span>
+            <a href="https://wa.me/6300810337" target="_blank">Contact us on <span
+                    style="font-size: 1.2rem; margin-left: 5px;">💬</span></a>
+            <a href="mailto:info@aevibe.in">✉️ info@aevibe.in</a>
+        </div>
+    </div>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo"><img src="assets/final_logo_transparent.png" alt="Ayush Eduvibe" class="nav-logo"> AYUSH
+                <span>EDUVIBE</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="study-abroad.html" class="nav-link">Study Abroad</a>
+                <a href="eligibility.html" class="nav-link" style="color:var(--primary); font-weight:600;">Check
+                    Eligibility</a>
+                <a href="exams.html" class="nav-link active">Exams</a>
+                <a href="jobs.html" class="nav-link">Jobs</a>
+                <a href="services.html" class="nav-link">Services</a>
+            </div>
+            <button class="mobile-menu-btn" style="display:none; color:white; font-size: 24px;">☰</button>
+        </div>
+    </nav>
+
+    <section class="hero" style="padding-bottom: 50px;">
+        <div class="container text-center">
+            <h1>Exam Preparation</h1>
+            <p>Ace your exams with our study materials and live classes.</p>
+        </div>
+    </section>
+
+    <!-- Free Resources (Dynamic) -->
+    <section class="section">
+        <div class="container">
+            <h2 class="mb-2">Free Resources <span class="tag tag-free">FREE</span></h2>
+            <div id="exams-free-list" class="grid grid-4">
+                <!-- Injected via script.js -->
+                <p>Loading resources...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Paid Packages (Dynamic) -->
+    <section class="section" style="background: rgba(255,255,255,0.02)">
+        <div class="container">
+            <h2 class="mb-2">Premium Live Classes <span class="tag tag-paid">PAID</span></h2>
+            <div id="exams-paid-list" class="grid grid-4">
+                <!-- Injected via script.js -->
+                <p>Loading packages...</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
